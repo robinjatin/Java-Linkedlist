@@ -1,4 +1,3 @@
-package linkedlist;
 import java.util.*;
 public class Linkedlist5 {
 	static Node head;
@@ -101,6 +100,24 @@ public class Linkedlist5 {
 		return li;
 		
 	}
+	public static void reverse(Linkedlist5 li)
+	{
+	if(li.head==null)
+	System.out.println("Linked list is empty");
+	else
+	{
+    Node prev = null; 
+    Node current = li.head; 
+    Node next = null; 
+    while (current != null) { 
+        next = current.next; 
+        current.next = prev; 
+        prev = current; 
+        current = next; 
+    } 
+    li.head= prev; 
+	}
+	}
 	public static void display(Linkedlist5 li)
 	{
 		Node current=li.head;
@@ -127,7 +144,7 @@ public class Linkedlist5 {
 		System.out.println("Menulist: Insert, Delete, Display");
 		while(s.equalsIgnoreCase("no")==false){	
 			int casee;
-			System.out.println("Enter the case, 1 for Insertion, 2 for delete, 3 for displaying");
+			System.out.println("Enter the case, 1 for Insertion, 2 for delete, 3 for reversing & 4 for displaying ");
 			try {
 			 casee=sc.nextInt();
 		switch(casee)
@@ -204,8 +221,12 @@ public class Linkedlist5 {
 			}
 			break;
 		}
-			
 		case 3:
+		{
+			li.reverse(li);
+			break;
+		}
+		case 4:
 		{
 			li.display(li);
 			break;
@@ -228,11 +249,11 @@ public class Linkedlist5 {
 			System.out.println("Do you want to continue? Enter yes or no");
 			sc.nextLine();
 			s=sc.next();
-			if(s.equalsIgnoreCase("no"))
+			if(s.equalsIgnoreCase("no")||s.equalsIgnoreCase("n"))
 			{
 				break;
 			}
-			else if(s.equalsIgnoreCase("yes"))
+			else if(s.equalsIgnoreCase("yes")||s.equalsIgnoreCase("y"))
 			{
 			continue;
 			}
