@@ -106,16 +106,16 @@ public class Linkedlist5 {
 	System.out.println("Linked list is empty");
 	else
 	{
-    Node prev = null; 
-    Node current = li.head; 
-    Node next = null; 
+    		Node prev = null; 
+    		Node current = li.head; 
+    		Node next1 = null; 
     while (current != null) { 
-        next = current.next; 
-        current.next = prev; 
-        prev = current; 
-        current = next; 
+        	next1 = current.next; 
+        	current.next = prev; 
+        	prev = current; 
+        	current = next1; 
     } 
-    li.head= prev; 
+    		li.head= prev; 
 	}
 	}
 	public static void display(Linkedlist5 li)
