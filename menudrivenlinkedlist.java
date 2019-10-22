@@ -108,13 +108,14 @@ public class Linkedlist5 {
 	{
     		Node prev = null; 
     		Node current = li.head; 
-    		Node next1 = null; 
-    while (current != null) { 
-        	next1 = current.next; 
-        	current.next = prev; 
-        	prev = current; 
-        	current = next1; 
-    } 
+    		Node temp = null; 
+    		while (current != null) 
+		{ 
+        		temp = current.next; 
+        		current.next = prev; 
+        		prev = current; 
+        		current = temp 
+   		 } 
     		li.head= prev; 
 	}
 	}
