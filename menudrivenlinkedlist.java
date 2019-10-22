@@ -143,7 +143,7 @@ public class Linkedlist5 {
 		String s=new String();
 		String z=new String();
 		System.out.println("Menulist: Insert, Delete, Display");
-		while(s.equalsIgnoreCase("no")==false){	
+		while(s.equalsIgnoreCase("no")||s.equalsIgnoreCase("n")==false){	
 			int casee;
 			System.out.println("Enter the case, 1 for Insertion, 2 for delete, 3 for reversing & 4 for displaying ");
 			try {
