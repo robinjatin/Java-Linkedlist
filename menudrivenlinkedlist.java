@@ -1,6 +1,5 @@
 import java.util.*;
 
-import random.Node;
 public class Linkedlist5 {
 	static Node head;
 	public static Scanner sc=new Scanner(System.in);
