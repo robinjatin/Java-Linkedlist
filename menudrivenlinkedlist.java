@@ -114,7 +114,7 @@ public class Linkedlist5 {
         		temp = current.next; 
         		current.next = prev; 
         		prev = current; 
-        		current = temp 
+        		current = temp; 
    		 } 
     		li.head= prev; 
 	}
