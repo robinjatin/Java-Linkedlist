@@ -1,4 +1,6 @@
 import java.util.*;
+
+import random.Node;
 public class Linkedlist5 {
 	static Node head;
 	public static Scanner sc=new Scanner(System.in);
@@ -48,7 +50,7 @@ public class Linkedlist5 {
 		}
 		return li;
 	}
-	public static Linkedlist5 delete(Linkedlist5 li,int index)
+	public static Linkedlist5 deletebyindex(Linkedlist5 li,int index)
 	{
 		Node current=li.head,prev=null;
 		int count=0;
@@ -114,7 +116,7 @@ public class Linkedlist5 {
         		temp = current.next; 
         		current.next = prev; 
         		prev = current; 
-        		current = temp; 
+        		current = temp;
    		 } 
     		li.head= prev; 
 	}
@@ -135,6 +137,31 @@ public class Linkedlist5 {
 				current=current.next;
 			}
 			System.out.println(current.data);
+		}
+	}
+	public static void delete(int data)
+	{
+		if(head==null)
+		{
+			System.out.println("LL empty");
+		}
+		else
+		{
+			Node current=head;
+			Node prev=null;
+			if(current.data==data)
+			{
+				head=current.next;
+				return;
+			}
+			while(current!=null&&current.data!=data)
+			{
+				prev=current;
+				current=current.next;
+			}
+			if(current==null)
+				return;
+			prev.next=current.next;
 		}
 	}
 	public static void main(String[] args) throws Exception{
@@ -187,7 +214,7 @@ public class Linkedlist5 {
 		}
 		case 2:
 		{
-			System.out.println("Do you want to delete at the end? Enter 1 for yes and 2 for no");
+			System.out.println("Enter 1 for Deleting last, 2 for deletebyindex and 3 for deletebyelement");
 			
 			try {
 			int ze=sc.nextInt();
@@ -203,7 +230,14 @@ public class Linkedlist5 {
 			System.out.println("Deletion of data, enter the index at which you want to delete");
 			
 			int ind=sc.nextInt();
-			li.delete(li,ind);
+			li.deletebyindex(li,ind);
+			break;
+				}
+				case 3:
+				{
+			System.out.println("Deletion of data, enter the number you want to delete");
+			int num=sc.nextInt();
+				li.delete(num);
 			break;
 				}
 				default:
